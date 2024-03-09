@@ -1,0 +1,11 @@
+.container {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+
+  select {
+    width: 100px;
+    text-align: center;
+  }
+}
