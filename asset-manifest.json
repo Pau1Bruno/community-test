@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/community-test/static/css/main.c2468cdf.css",
+    "main.js": "/community-test/static/js/main.85363269.js",
+    "index.html": "/community-test/index.html",
+    "main.c2468cdf.css.map": "/community-test/static/css/main.c2468cdf.css.map",
+    "main.85363269.js.map": "/community-test/static/js/main.85363269.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2468cdf.css",
+    "static/js/main.85363269.js"
+  ]
+}
