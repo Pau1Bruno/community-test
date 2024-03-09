@@ -12,14 +12,14 @@ interface FilterProps {
     setFilter: React.Dispatch<FilterForm>;
 }
 
-const Filter = ({filter, setFilter}: FilterProps) => {
+const Filter = ({ filter, setFilter }: FilterProps) => {
     const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setFilter({ ...filter, [ e.target.name ]: e.target.value })
     };
-   
+    
     return (
-        <div className={ styles.container } >
+        <div className={ styles.container }>
             <select name="closed" onChange={ handleSelect }>
                 <option value="" disabled>Тип приватности</option>
                 <option value="">Все</option>

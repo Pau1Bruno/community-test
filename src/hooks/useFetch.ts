@@ -1,22 +1,25 @@
 import { useEffect, useState } from "react";
 import { GetGroupsResponse } from "../../types";
 
-
 export const useFetch = (): GetGroupsResponse => {
     const [ query, setQuery ] = useState([]);
-    // const [ loading, setLoading ] = useState(false);
+    const [ loading, setLoading ] = useState(false);
     const [ error, setError ] = useState(undefined);
     
+    
     useEffect(() => {
-        // setLoading(true);
-        fetch("http://localhost:3000/groups.json")
+        setLoading(true);
+        fetch("http://localhost:3000/community-test/groups.json")
+            .then()
             .then(response => response.json())
             .then(setQuery)
             .catch(setError)
-        // .finally(() => setLoading(false))
+            .then(async () => {
+                await new Promise(() => setTimeout(() => setLoading(false), 1000))
+            })
     }, []);
     
-    if ( error || !query.length ) return {
+    if ( error || !query.length || loading ) return {
         result: 0,
     }
     

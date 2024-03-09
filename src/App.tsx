@@ -7,19 +7,21 @@ import { useSortedGroups } from "./hooks/useGroups";
 
 function App() {
     const { result, data } = useFetch();
-    const [filter, setFilter] = useState<FilterForm>(
-        {closed: "", avatar_color: "", friends: ""}
+    const [ filter, setFilter ] = useState<FilterForm>(
+        { closed: "", avatar_color: "", friends: "" }
     )
     
     const groups = useSortedGroups(data, filter)
-    console.log(groups)
     
     return (
         <div className="App">
-            <Filter filter={filter} setFilter={setFilter}/>
-            {result ? groups?.map(group =>
-                <GroupCard key={group.id} group={group}/>
-            ) : <Loading/>}
+            <Filter filter={ filter } setFilter={ setFilter }/>
+            { result
+                ? groups?.map(group =>
+                    <GroupCard key={ group.id } group={ group }/>
+                )
+                : <Loading/>
+            }
         </div>
     );
 }

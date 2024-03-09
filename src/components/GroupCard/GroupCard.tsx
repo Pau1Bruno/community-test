@@ -12,12 +12,10 @@ const GroupCard = ({ group }: GroupCardProps) => {
     
     return (
         <div className={ styles.container }>
-            <div className={ group.avatar_color
-                ? styles.avatar
-                : styles.without_avatar
-            }
-                 style={ { background: group.avatar_color } }>
-            
+            <div 
+                className={ styles.avatar }
+                style={ { background: group.avatar_color } }
+            >
             </div>
             <div className={ styles.info }>
                 <p>{ group.name }</p>
@@ -26,7 +24,7 @@ const GroupCard = ({ group }: GroupCardProps) => {
                 { group.friends &&
                     <>
                         <button onClick={ () => setVisible(true) }> друзья: { group.friends.length }</button>
-                        <Modal visible={visible} setVisible={setVisible} friends={ group.friends }/>
+                        <Modal visible={ visible } setVisible={ setVisible } friends={ group.friends }/>
                     </>
                 }
             </div>

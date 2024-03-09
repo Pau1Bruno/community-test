@@ -12,13 +12,11 @@ const Modal = ({ friends, visible, setVisible }: ModalProps) => {
     const rootClasses = [ styles.modal ];
     if ( visible ) rootClasses.push(styles.active);
     
-    
     return (
-        
         <div className={ rootClasses.join(' ') } onClick={ () => setVisible(false) }>
             <div className={ styles.content } onClick={ event => event.stopPropagation() }>
                 { friends.map((friend, index) =>
-                    <div key={friend.first_name + friend.last_name + index} className={styles.friend}>
+                    <div key={ friend.first_name + friend.last_name + index } className={ styles.friend }>
                         <p>{ friend.first_name } { friend.last_name }</p>
                     </div>
                 ) }
