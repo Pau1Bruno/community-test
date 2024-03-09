@@ -9,7 +9,7 @@ export const useFetch = (): GetGroupsResponse => {
     
     useEffect(() => {
         setLoading(true);
-        fetch("http://localhost:3000/community-test/groups.json")
+        fetch("https://pau1bruno.github.io/community-test/groups.json")
             .then()
             .then(response => response.json())
             .then(setQuery)
